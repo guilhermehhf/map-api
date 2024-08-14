@@ -7,6 +7,9 @@ import { StreetsModule } from './streets/streets.module';
 import { NeighborhoodsModule } from './neighborhoods/neighborhoods.module';
 import { ShapefileModule } from './shapefile/shapefile.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
+
 
 @Module({
   imports: [
@@ -24,7 +27,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     NeighborhoodsModule, 
     StreetsModule, 
     EventsModule, 
-    ShapefileModule
+    ShapefileModule, 
+    UsersModule, 
+    AuthModule,
+    
   ],
   controllers: [AppController],
   providers: [AppService],

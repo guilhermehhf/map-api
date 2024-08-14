@@ -1,5 +1,4 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, Geometry } from 'typeorm';
-import { Polygon } from 'geojson';
 import { Neighborhood } from 'src/neighborhoods/entities/neighborhood.entity';
 import { Street } from 'src/streets/entities/street.entity';
 

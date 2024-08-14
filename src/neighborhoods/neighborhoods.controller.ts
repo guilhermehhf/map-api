@@ -20,7 +20,7 @@ export class NeighborhoodsController {
   ): Promise<string> {
     const geojson = JSON.parse(file.buffer.toString());
     await this.neighborhoodsService.upload(geojson, cityId);
-    return `Successfully uploaded shapefile for city with id ${cityId}`;
+    return `Successfully uploaded geojson file for city with id ${cityId}`;
   }
 
   @Get()
@@ -29,8 +29,8 @@ export class NeighborhoodsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.neighborhoodsService.findOne(+id);
+  async findOne(@Param('id') id: string) {
+    return await this.neighborhoodsService.findOne(+id);
   }
 
   @Patch(':id')

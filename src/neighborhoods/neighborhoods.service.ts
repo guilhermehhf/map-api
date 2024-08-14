@@ -38,8 +38,9 @@ export class NeighborhoodsService {
     return this.neighborhoodRepository.find();
   }
 
-  findOne(id: number) {
-    return this.neighborhoodRepository.findOneBy({ id });
+  async findOne(id: number) {
+    const neighborhood = await this.neighborhoodRepository.findOneBy( { id } );
+    return neighborhood;
   }
 
   update(id: number, updatedNeighborhood: Partial<Neighborhood>) {
